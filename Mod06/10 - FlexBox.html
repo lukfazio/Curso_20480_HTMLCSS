@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        div {
+            width: 100%;
+            height: 200px;
+            color: #fff;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        body {
+            display: flex;
+        }
+
+        #divA{
+            order: 2;
+            background-color: red;
+        }
+
+        #divB{
+            order: 1;
+            background-color: green;
+        }
+
+        #divC{
+            order: 4;
+            background-color: blue;
+        }
+
+        #divD{
+            order: 3;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divA">A</div>
+    <div id="divB">B</div>
+    <div id="divC">C</div>
+    <div id="divD">D</div>
+</body>
+
+</html>

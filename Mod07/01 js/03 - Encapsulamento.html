@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulamento</title>
+</head>
+
+<body>
+    <h1>Encapsulamento = Usado antes do conceito de Classes no JS</h1>
+
+    <script>
+        let funcionario = function (matricula, nome, salario) {
+            const imposto = 0.1;
+
+            this.salarioLiquido = _ => console.log(salario - salario * imposto);
+
+            this.codigo = 'XYZ' + matricula;
+        };
+
+        let priscilla = new funcionario('abc', 'Priscilla', 1000);
+        priscilla.salarioLiquido();
+        console.log(priscilla.codigo);
+        console.log(priscilla.imposto);
+
+        let raphael = new funcionario('def', 'Raphael', 2000);
+        raphael.salarioLiquido();
+        console.log(raphael.codigo);
+        console.log(raphael.imposto);
+
+    </script>
+</body>
+
+</html>

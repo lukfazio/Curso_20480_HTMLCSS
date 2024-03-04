@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket</title>
+</head>
+<body>
+    <input type="text" id="txtMsg" autofocus placeholder="Digite a sua mensagem">
+    <button onclick="enviar()">Enviar Mensagem</button>
+    <button onclick="sair()">Desconectar</button>
+    <div id="output"></div>
+    <script>
+        const ws =new WebSocket("ws://127.0.0.1:8081"); 
+        const txtMsg = document.querySelector('#txtMsg');
+        const output = document.querySelector('#output');
+
+        function imprimir(obj) {
+            output.innerHTML += obj;
+        }
+
+        ws.onopen = () => imprimir('<h2>Conexão estabelecida</h2>');
+        ws.onerror = () => imprimir('<p style="color:#f00;">Erro!</p>');
+
+        ws.onmessage = (msg) => {
+            imprimir(`<p style="font-weight:bold;">${msg.data}</p>`);
+            console.log(msg);
+        }
+
+        function sair() {
+            ws.close();
+            imprimir('<p>Cliente desconectado</p>');
+        }
+
+        function enviar() {
+            const msg = txtMsg.value;
+            if (msg.length > 0) {
+                ws.send(msg);
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crud.css">
+    <title>CURD com Dados</title>
+</head>
+
+<body>
+    <header>
+        <h1>CRUD</h1>
+        <p>Trabalhando com Dados</p>
+    </header>
+
+    <div id="divStatus"></div>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>Listagem de Clientes</h2>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                    <!-- <tfoot></tfoot> -->
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Cliente</h2>
+            <form action="#">
+                <div>
+                    <label for="txtNome">Nome: </label>
+                    <input id="txtNome" type="text" required minlength="4">
+                </div>
+                <div>
+                    <label for="txtIdade">Idade: </label>
+                    <input id="txtIdade" type="number" required min="18">
+                </div>
+
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+
+    <section id="status_navegacao">
+        <p>Status </p>
+    </section>
+
+    <footer>
+        <p>&copy; FzoSft - 2021</p>
+    </footer>
+
+    <script src="clientesRepository_fetch.js"></script>
+    <!-- <script src="clientesRepository_xhr.js"></script> -->
+    <script src="crud.js"></script>
+</body>
+
+</html>

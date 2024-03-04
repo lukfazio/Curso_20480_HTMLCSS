@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyFrame</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            border-radius: 100%;
+            position: absolute;
+            padding: 20px;
+        }
+
+        .start {
+            animation: pula-pula 5s infinite;
+        }
+
+        @keyframes pula-pula {
+            0% {top: 0;}
+            10% {top: 100px;}
+            20% {top: 200px;}
+            30% {top: 300px;}
+            40% {top: 400px;}
+            50% {top: 500px;background-color: #0f0;}
+            60% {top: 600px;}
+            70% {top: 700px;}
+            80% {top: 800px;}
+            90% {top: 1000;background-color: #00f;}
+            100% {bottom: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button>Ativar</button>
+    </div>
+    <script>
+        const div = 
+        document
+            .querySelector('div');
+        
+        div
+            .onclick = ()=> div.classList.add('start');
+    </script>
+</body>
+</html>

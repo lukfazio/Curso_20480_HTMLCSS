@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namespace</title>
+</head>
+
+<body>
+    <h1>Utilizando Namespace</h1>
+
+    <script>
+        let configAPI = {
+            url: 'minhaapi.com',
+            printURL: function () {
+                console.log(configAPI.url);
+            },
+            connectionStrings: {
+                XPTO: 'string XPTO',
+                XYZ: 'string XYZ'
+            }
+        };
+
+        console.log(configAPI.url, configAPI.connectionStrings.XPTO, configAPI.connectionStrings.XYZ,
+        configAPI.printURL());
+
+
+        (function () {
+            let configAPI = {};
+            configAPI.url = 'URL2';
+            configAPI.printURL = function () {console.log(configAPI.url);};
+            configAPI.connectionStrings = {
+                XPTO: 'string XPTO',
+                XYZ: 'string XYZ'
+            };
+
+            console.log('Dentro do IIF');
+            console.log(configAPI.URL, configAPI.connectionStrings.XPTO, configAPI.connectionStrings.XYZ,
+            configAPI.printURL());
+        })()
+    </script>
+
+</body>
+
+</html>

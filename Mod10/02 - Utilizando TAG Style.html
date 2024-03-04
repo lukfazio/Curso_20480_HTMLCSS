@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tag Style</title>
+    <link rel="stylesheet" href="all.css" media="all">
+    <style>
+        @media print {
+            button {
+                display: none;
+            }
+        }
+
+        @media screen {
+            th {
+                background-color: #f00;
+                color: #fff;
+            }
+
+            tbody>tr:nth-child(even) {
+                background-color: rgb(136, 133, 133);
+            }
+
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 5px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="imprimir()">Imprimir</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Nascimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Fabiano</td>
+                <td>12/09</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Priscilla</td>
+                <td>09/06</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Raphael</td>
+                <td>20/08</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        function imprimir() {
+            print();
+        }
+    </script>
+</body>
+
+</html>

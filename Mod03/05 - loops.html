@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+
+    <input id="txtNumero" type="number" max="100" value="10" autofocus placeholder="Informe um número...">
+    <button id="btnFor">For</button>
+    <button id="btnWhile">While</button>
+    <button id="btnDo" onclick="executandoDo()">Do</button>
+
+    <div id="painel"></div>
+
+    <script>
+        const btnFor = document.getElementById("btnFor");
+        const btnWhile = document.querySelector("#btnWhile");
+        const btnDo = document.querySelector("#btnDo");
+        const txtNumero = document.querySelector("#txtNumero");
+        const painel = document.getElementById("painel");
+
+        //btnFor.onclick = function() {}
+        btnFor.onclick = () => {
+            painel.textContent = 'Testando o "for" ...';
+
+            for (let index = 0; index <= txtNumero.value; index++) {
+                painel.innerHTML += '<br>' + index;
+            }
+            txtNumero.focus();
+        }
+
+        btnWhile.addEventListener('click', _ => {
+            painel.textContent = 'Testando o "while" ...';
+
+            let count = 0;
+            while (count <= txtNumero.value) {
+                painel.innerHTML += `<br>${count}`;
+                count++;
+            }
+        }, false);
+
+        function executandoDo() {
+            painel.textContent = 'Testando o "Do" ...';
+            let count = 0;
+            do {
+                painel.innerHTML += `<br>${count}`;
+                count++;
+            } while (count <= txtNumero.value)
+        }
+
+        
+    </script>
+</body>
+
+</html>

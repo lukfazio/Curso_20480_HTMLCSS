@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocalização</title>
+</head>
+
+<body>
+
+    <button onclick="getLocation()">
+        HitMe!!
+    </button>
+
+    <div id="output"></div>
+
+    <script>
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(
+                (log) => {
+                    document.getElementById('output').innerHTML = 
+                    `
+                        Latitude: ${log.coords.latitude}
+                        <br>
+                        Longitude: ${log.coords.longitude}
+                    `;
+                    console.log(log);
+                },
+                (error) => {
+                    console.log(error);
+                }
+            )
+        }
+    </script>
+
+</body>
+
+</html>

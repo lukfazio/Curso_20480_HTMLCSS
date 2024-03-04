@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <label>Selecione um Item...</label>
+    <select id="lista">
+        <option></option>
+        <option value="1">Item 1</option>
+        <option value="2">Item 2</option>
+        <option value="3">Item 3</option>
+    </select>
+
+    <script>
+        let lista = document.querySelector('#lista');
+        lista.onchange = _ => {
+            const item = lista.value;
+            sessionStorage.setItem('meu-app.item', item);
+            sessionStorage['meu-app.item'] = item;
+        }
+
+        window.onload = _ => {
+            //const item = sessionStorage.getItem('meu-app.item');
+            const item = sessionStorage['meu-app.item'];
+
+            if (item != null) {
+                lista.value =  item;
+            }
+        }
+    </script>
+</body>
+</html>

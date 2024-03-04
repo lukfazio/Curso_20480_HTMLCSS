@@ -1,0 +1,13 @@
+.alerta {
+    color: cyan;
+    background-color: darkred;
+}
+
+ul{
+    list-style-type: square;
+    font-size: 24px;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

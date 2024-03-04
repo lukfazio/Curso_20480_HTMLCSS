@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    
+
+    <div style="border: 2px #000 solid;">
+        <canvas id="circle" width="400" height="200">
+            Não há suporte ao SVG
+        </canvas>
+        <button onclick="canvasCircle()">Circle</button>
+    </div>
+
+    <div style="border: 2px #000 solid;">
+        <canvas id="rect" width="400" height="200">
+            Não há suporte ao SVG
+        </canvas>
+        <button onclick="canvasRect()">Rect</button>
+    </div>
+
+    <div style="border: 2px #000 solid;">
+        <canvas id="line" width="400" height="200">
+            Não há suporte ao SVG
+        </canvas>
+        <button onclick="canvasLine()">Line</button>
+    </div>
+
+    <div style="border: 2px #000 solid;">
+        <canvas id="text" width="400" height="200">
+            Não há suporte ao SVG
+        </canvas>
+        <button onclick="canvasText()">Text</button>
+    </div>
+
+
+    <script>
+        function canvasCircle() {
+            let circle = document.getElementById('circle');
+            let ctx = circle.getContext('2d');
+            ctx.beginPath();
+            ctx.arc(95, 50, 40, 0, 2*Math.PI);
+            ctx.fillStyle = 'red';
+            ctx.strokeStyle = '#000';
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function canvasRect() {
+            let rect = document.getElementById('rect');
+            let ctx = rect.getContext('2d');
+            ctx.beginPath();
+            ctx.fillStyle = 'red';
+            ctx.strokeStyle = '#000';
+            ctx.fillRect(10, 10, 500, 100);
+            ctx.stroke();
+        }
+
+        function canvasLine() {
+            let line = document.getElementById('line');
+            let ctx = line.getContext('2d');
+            
+            
+            ctx.moveTo(0,0);
+            ctx.lineTo(500, 200);
+            
+            ctx.strokeStyle = '#000';
+            ctx.stroke();
+        }
+
+
+        function canvasText() {
+            let text = document.getElementById('text');
+            let ctx = text.getContext('2d');
+            
+            ctx.font = '50px Verdana';
+            ctx.strokeStyle = '#000';
+            ctx.strokeText('Olá do Canvas', 5, 50);
+
+
+            
+            let gradiente = ctx.createLinearGradient(0, 0, text.width, 0);
+            gradiente.addColorStop('0', 'magenta');
+            gradiente.addColorStop('.5', 'blue');
+            gradiente.addColorStop('1', 'red');
+
+            ctx.fillStyle = gradiente;
+            ctx.fillText('Texto 2', 50, 100);
+            
+            
+        }
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando IF</title>
+</head>
+
+<body>
+    <main>
+        <label for="">Selecione uma Fruta:</label>
+        <select title="selectFrutas" onchange="verificarFruta(this)">
+            <option>Selecione...</option>
+            <option>Alface</option>
+            <option>Banana</option>
+            <option>Tomate</option>
+            <option>Maça</option>
+            <option>Pepino</option>
+        </select>
+
+        <p id="output"></p>
+    </main>
+
+    <script>
+        function verificarFruta(item) {
+
+            if (item.selectedIndex == 0) {
+                return;
+            }
+
+            //const alimento = document.querySelector('select').value;
+            //console.log(alimento, item.value);
+
+            //console.log(12 == '12');
+            //console.log(12 === '12');
+
+            const frutas = ['Banana', 'Tomate', 'Maça'];
+            const alimento = item.value;
+            let isFruta = false;
+            //if (alimento === 'Banana' || alimento === 'Tomate' || alimento === 'Maça') {
+            if (frutas.indexOf(alimento) >= 0) {
+                isFruta = true;
+            } else {
+                alert('Selecione uma fruta!!');
+            }
+
+            document.getElementById("output").textContent =
+                `O item selecionada ${( isFruta ? '' : 'não ')}é uma fruta!`;
+        }
+    </script>
+</body>
+
+</html>

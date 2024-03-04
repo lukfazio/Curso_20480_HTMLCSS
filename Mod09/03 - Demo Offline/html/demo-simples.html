@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Simples - XMLHTTPRequest - Fetch</title>
+</head>
+
+<body>
+    <div></div>
+    <button onclick="getXHR()">Via XHR</button>
+    <button onclick="getFetch()">Fetch</button>
+    <button id="btnAsync">Fetch Async</button>
+
+    <script>
+        let url = 'http://localhost:5000/api/clientes'
+        const div = document.querySelector('div');
+
+
+        function printToDiv(data, type) {
+            div.innerHTML =
+                `
+                    <h2>Retornando via ${type}</h2>
+                    <p>${data}</p>
+                `
+        }
+
+        function getXHR() {
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', url);
+            xhr.onloadend = () => {
+                console.table(xhr.responseText);
+                console.table(JSON.parse(xhr.responseText));
+                printToDiv(xhr.responseText, "XHR");
+            };
+            xhr.send();
+        }
+
+
+
+        function getFetch() {
+            fetch(url, {
+                    method: 'get'
+                }).then((data) => {
+                    console.log(data);
+                    //console.log(data.json());
+                    return data.json();
+                }).then((json) => printToDiv(JSON.stringify(json), "Fetch"))
+                .catch((error) => console.log(error));
+        }
+
+
+        document.getElementById("btnAsync").onclick = async () => {
+            let response = await fetch(url, {
+                method: 'get'
+            });
+            let json = await response.json();
+            console.table(json);
+            printToDiv(JSON.stringify(json), "Fetch com Async")
+        }
+    </script>
+
+</body>
+
+</html>

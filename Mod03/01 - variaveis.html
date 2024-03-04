@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Variaveis</title>
+</head>
+
+<body>
+    <h1>Usando variáveis em JavaScript</h1>
+    <p>Veja o resultado no Console do Navegador</p>
+
+    <script>
+        console.log('[INFO] Variáveis...');
+        console.log('[INFO] 01 - variaveis.html')
+
+        // Comentario em Linha
+        /*
+            Comentario em Bloco
+        */
+
+        /*
+            Usar de preferência o let
+            var -> escopo de função
+            let - > escopo de bloco
+        */
+
+        function TesteEscopo() {
+            if (true) {
+                var xptopVar = 'Conteudo da variável xptoVar';
+                let xptopLet = 'Conteudo da variável xptoLet';
+            }
+
+            console.log('Conteudo da xptoVar: ' + xptopVar);
+            //console.log('Conteudo da xptoLet: ' + xptopLet);
+        }
+        TesteEscopo();
+
+        console.log('===========================================')
+
+        function TesteConst() {
+            const pi = 3.1415;
+            console.log(pi);
+            // pi = 3.141592;
+            // console.log(pi);
+        }
+        TesteConst();
+
+        console.log('===========================================')
+
+        function TesteOperador() {
+            let num1 = 1;
+            let num2 = 2;
+            let total = num1 + num2;
+            console.log('Tipo do total: ' + typeof total);
+            console.log('Valor do Total: ' + total);
+
+            num1 = '1';
+            num2 = '2';
+            total = num1 + num2;
+            console.log('Tipo do total: ' + typeof total);
+            console.log('Valor do Total (string): ' + total);          
+        }
+        TesteOperador();
+
+        console.log('===========================================')
+
+        function TestarInterpolacao() {
+            const nome = 'Lucio';;
+            const sobrenome = 'Fazio';
+            const cpf = 'xxx.xxx.xxx-xx ';
+
+            let msg = `Nome: ${nome} ${sobrenome} | cpf: ${cpf}`;
+            console.log(`Conteudo da Msg: ${msg}`);
+        }
+        TestarInterpolacao();
+
+        console.log('===========================================')
+
+        function TestarArrays() {
+            let nomes = ['Fabiano', 'Rafael', 'Priscila'];
+            console.log(nomes[0]);
+            console.log(nomer[2]);
+            
+            let index = nomes.indexOf('Rafael');            
+            console.log(nomes[index]);
+        }
+        TestarArrays()
+
+        console.log('===========================================')
+
+
+    </script>
+</body>
+
+</html>

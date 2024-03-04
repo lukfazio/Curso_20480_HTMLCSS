@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+
+<body>
+    <h1>Utilizando Classes</h1>
+
+    <form>
+        <div>
+            <label>Nome</label>
+            <input type="text" id="txtNome" value="Nome" required>
+        </div>
+
+        <div>
+            <label>Sobrenome</label>
+            <input type="text" id="txtSobrenome" value="Sobrenome" required>
+        </div>
+
+
+        <div>
+            <label>Idade</label>
+            <input type="number" id="txtIdade" value="20" required>
+        </div>
+
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+
+    </form>
+
+
+    <script src="cliente.js"></script>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', (ev) => {
+            ev.preventDefault();
+
+            const nome = document.getElementById('txtNome');
+            const sobrenome = document.getElementById('txtSobrenome');
+            const idade = document.getElementById('txtIdade');
+
+            let cliente = new Cliente(nome.value, sobrenome.value, idade.value );
+            console.log(cliente);
+            console.log(cliente.nome);
+            console.log(cliente.sobrenome);
+            console.log(cliente.idade);
+
+            if (!cliente.isValid) {
+                alert(cliente.errors)
+            }
+
+
+        } ,false);
+    </script>
+</body>
+
+</html>

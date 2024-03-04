@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação</title>
+</head>
+<body>
+    <h1>CadCli</h1>
+
+    <form method="post" action="http://localhost:5000/cadcli">
+
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" required autofocus name="nome" id="nome">
+        </div>
+
+        <div>
+            <label for="cpf">CPF:</label>
+            <input type="text" required autocomplete="off" name="cpf" id="cpf">
+        </div>
+
+        <div>
+            <label for="cupom">Cupom de desconto:</label>
+            <input type="text" required pattern="[A-Za-z]{3}-{1}[0-9]{4}" title="3 letras - 4 dígitos" name="cupom" id="cupom"> 
+        </div>
+
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+    
+</body>
+</html>

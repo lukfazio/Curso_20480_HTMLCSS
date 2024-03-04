@@ -1,0 +1,83 @@
+form>div {
+    margin-top: 20px;
+}
+
+form>div>label {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+}
+
+form>div:last-child {
+    margin-left: 80px;
+}
+
+table {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    padding: 12px;
+    text-align: left;
+    background-color: rgb(56, 126, 56);
+    color: #fff;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ccc;
+}
+
+input:valid {
+    border-left: rgb(56, 126, 56) 5px solid;
+}
+
+input:invalid {
+    border-left: rgb(243, 114, 114) 5px solid;
+}
+
+div#divStatus {
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 26px;
+    padding: 20px;
+}
+
+
+div#divStatus>p.success {
+    background-color: rgb(5, 100, 5);
+}
+
+div#divStatus>p.warning {
+    background-color: rgb(255, 150, 5);
+}
+
+div#divStatus>p.error {
+    background-color: rgb(243, 114, 114);
+}
+
+section#status_navegacao {
+    visibility: hidden;
+    color: #fff;
+}
+
+.online {
+    visibility: visible !important;
+    background-color: #0F0;
+}
+
+.offline {
+    visibility: visible !important;
+    background-color: #F00;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+</head>
+
+<body>
+    <h1>Herança com Prototype</h1>
+
+    <script>
+        let animalObj = function() {
+            this.comer = _ => console.log('animal comendo...');
+        }
+
+        let animal = new animalObj();
+        animal.comer();
+
+
+        let aveObj = function() {
+            this.voar = _ => console.log('ave voando');
+        }
+
+        aveObj.prototype = new animalObj();
+
+        let calopsita = new aveObj();
+        calopsita.voar();
+        calopsita.comer();
+        calopsita.bicar = _ => console.log('Calopsita Brava!!');
+
+        let outraCalopsita = new aveObj();
+        outraCalopsita.comer();
+        outraCalopsita.voar();
+        outraCalopsita.bicar(); //erro pois n esta no prototype
+
+
+    </script>
+
+</body>
+
+</html>

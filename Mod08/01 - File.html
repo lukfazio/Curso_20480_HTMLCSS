@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
+</head>
+
+<body>
+    <h1>Trabalhando com leitura de arquivos</h1>
+
+    <div>
+        <label>Selecione uma Imagem...</label>
+        <input type="file" accept="image/*" onchange="lerImagem(this.files)">
+    </div>
+    <br>
+    <div>
+        <img id="output_img" alt="Imagem Escolhida" width="600px">
+    </div>
+
+    <hr>
+
+    <div>
+        <label>Selecione um Arquivo de Texto...</label>
+        <input type="file" accept="text/*" onchange="lerTexto(this.files)">
+    </div>
+    <br>
+    <div>
+        <textarea id="txtFile" cols="30" rows="10"></textarea>
+    </div>
+
+
+    <script>
+        function lerImagem(ev) {
+            console.log(ev);
+            const output = document.getElementById('output_img');
+
+            let reader = new FileReader();
+            reader.onload = (arq) => output.src = arq.target.result;
+            reader.readAsDataURL(ev[0]);
+        }
+
+        function lerTexto(ev) {
+            console.log(ev);
+            const output = document.getElementById('txtFile');
+
+            let reader = new FileReader();
+            reader.onload = (arq) => output.value = arq.target.result;
+            reader.readAsText(ev[0]);
+            
+        }
+    </script>
+</body>
+
+</html>

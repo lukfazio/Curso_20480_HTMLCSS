@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+
+    <h1>Usando Prototipos</h1>
+
+
+    <script>
+        const nomes = ['Fabiano', 'Priscilla', 'Raphael'];
+        console.log(typeof nomes);
+
+        Array.prototype.minhaFuncao = _ => console.log('Array Turbinado');
+        Array.prototype.outraFuncao = _ => console.log('Outra Função');
+
+        nomes.minhaFuncao();
+        nomes.outraFuncao();
+
+    </script>
+</body>
+
+</html>
